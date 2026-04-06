@@ -22,13 +22,22 @@ public class OneDSubtraction {
         }
         int maxsize=Math.max(size1,size2);
         int[] result=new int[maxsize];
-        System.out.print("You have three options:\n1.Array1-Array2\n2.Array2-Array1\n3.Absolute Difference");
-        System.out.print("Enter the options serial number here:");
-        int choice=sc.nextInt();
+        char choice;
+        while(true) {
+            System.out.print("You have three options:\n1.Array1-Array2\n2.Array2-Array1\n3.Absolute Difference");
+            System.out.print("Enter the options serial number here:");
+            choice = sc.next().charAt(0);
+            if(choice=='1' || choice=='2' || choice=='3'){
+                break;
+            }
+            else{
+                System.out.println("Enter a valid choice");
+            }
+        }
         int[] results=new int[maxsize];
         int[] result2=new int[maxsize];
         switch(choice){
-            case 1:
+            case '1':
                 for(int i=0;i<maxsize;i++){
                     if(size1<maxsize){
                         if(i<size1){
@@ -48,7 +57,7 @@ public class OneDSubtraction {
                     }
                 }
                 break;
-            case 2:
+            case '2':
                 for(int i=0; i<maxsize;i++){
                     if(size1<maxsize){
                         if(i<size1){
@@ -68,7 +77,7 @@ public class OneDSubtraction {
                     }
                 }
                 break;
-            case 3:
+            case '3':
                 for(int i=0; i<maxsize ;i++){
                     if(size1<maxsize){
                         if(i<size1){
